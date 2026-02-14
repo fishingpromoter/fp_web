@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../logo-boat.png">
+  <meta name="description" content="FishingPromoter.com Fishing Show 2026 Special Offer — Get a full year for just $97 (regularly $97/mo). Community, marketing tools, training & support for fishing business owners.">
+  <title>FishingPromoter.com | Fishing Show 2026 Special Offer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ocean-darkest: #0a1628;
+      --ocean-dark: #1a3a5c;
+      --ocean-mid: #2d5a87;
+      --accent-blue: #4a9eff;
+      --accent-cyan: #00d4ff;
+      --gold: #f5a623;
+      --gold-light: #ffc107;
+      --bg-black: #000;
+      --bg-near-black: #0a0a0a;
+      --font-heading: 'Bebas Neue', 'Arial Narrow', sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-black);
+      color: #fff;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(at 50% 40%, var(--ocean-darkest), #000 70%);
+      padding: 2rem 1rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      animation: fade-up 0.8s ease-out both;
+    }
+
+    .hero-logo {
+      margin: 0 auto 1rem;
+      height: 14rem;
+      width: auto;
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.375rem 1.25rem;
+      border-radius: 3rem;
+      background: rgba(74,158,255,0.15);
+      border: 1px solid rgba(74,158,255,0.3);
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      color: var(--accent-cyan);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .cyan { color: var(--accent-cyan); }
+    .hero h1 .gold { color: var(--gold); }
+
+    .hero .subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+      max-width: 36rem;
+      margin: 0 auto 2rem;
+      line-height: 1.625;
+    }
+
+    /* ── Pricing Card ── */
+    .pricing-card {
+      max-width: 28rem;
+      margin: 0 auto 2rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      background: linear-gradient(to bottom, rgba(26,58,92,0.5), rgba(10,22,40,0.7));
+      border: 1px solid rgba(74,158,255,0.2);
+      box-shadow: 0 0 40px rgba(74,158,255,0.1);
+    }
+
+    .pricing-card .old-price {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: line-through;
+      letter-spacing: 0.025em;
+    }
+
+    .pricing-card .new-price {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      color: var(--gold);
+      letter-spacing: 0.025em;
+      line-height: 1.1;
+    }
+
+    .pricing-card .new-price span {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .pricing-card .savings {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    /* ── Form (inline on this page) ── */
+    .offer-form {
+      max-width: 28rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .offer-form input,
+    .offer-form select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(45,90,135,0.3);
+      color: #fff;
+      font-family: var(--font-body);
+      transition: border-color 0.3s;
+      appearance: none;
+    }
+
+    .offer-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .offer-form input:focus,
+    .offer-form select:focus { outline: none; border-color: var(--accent-blue); }
+    .offer-form select option { background: var(--ocean-darkest); color: #fff; }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 0.875rem 2.5rem;
+      border-radius: 0.5rem;
+      background: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ocean-darkest);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      box-shadow: 0 0 30px rgba(245,166,35,0.5), 0 0 60px rgba(245,166,35,0.25);
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    /* Success state */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .success-msg.active { display: block; }
+
+    .success-msg h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-msg p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+    }
+
+    /* Waves */
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30vh;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background-repeat: repeat-x;
+      background-size: 50% 100%;
+      will-change: transform;
+    }
+
+    .wave-1 {
+      opacity: 0.6;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231a3a5c' fill-opacity='0.4' d='M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E");
+      animation: wave-scroll 12s linear infinite;
+    }
+
+    .wave-2 {
+      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%232d5a87' fill-opacity='0.3' d='M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E");
+      animation: wave-scroll 8s linear infinite reverse;
+    }
+
+    .wave-3 {
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%234a9eff' fill-opacity='0.15' d='M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,138.7C672,139,768,181,864,197.3C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'/%3E%3C/svg%3E");
+      animation: wave-scroll 15s linear infinite;
+    }
+
+    @keyframes wave-scroll {
+      from { transform: translateX(0) translateZ(0); }
+      to   { transform: translateX(-50%) translateZ(0); }
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── What You Get ── */
+    .benefits {
+      padding: 4rem 1rem;
+      background: var(--bg-near-black);
+    }
+
+    .benefits-inner {
+      max-width: 56rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .benefits h2 {
+      font-family: var(--font-heading);
+      font-size: 1.875rem;
+      letter-spacing: 0.025em;
+      color: #fff;
+      margin-bottom: 2.5rem;
+    }
+
+    .benefits h2 .gold { color: var(--gold); }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      background: rgba(26,58,92,0.15);
+      border: 1px solid rgba(74,158,255,0.08);
+    }
+
+    .benefit-check {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--accent-cyan);
+      margin-top: 0.125rem;
+    }
+
+    .benefit-item h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      letter-spacing: 0.025em;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 1rem;
+      background: var(--bg-black);
+      border-top: 1px solid rgba(26,58,92,0.2);
+      text-align: center;
+    }
+
+    footer .tagline {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    footer .copyright {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    footer a.back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.3s;
+    }
+
+    footer a.back-link:hover { color: var(--accent-cyan); }
+
+    /* ── Fade-in on scroll ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 640px) {
+      .hero-logo { height: 16rem; }
+      .hero h1 { font-size: 3.5rem; }
+      .hero .subtitle { font-size: 1.125rem; }
+      .pricing-card .new-price { font-size: 5rem; }
+      .btn-gold { font-size: 1.75rem; }
+      .benefits h2 { font-size: 2.25rem; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .hero-logo { height: 18rem; }
+      .hero h1 { font-size: 4.5rem; }
+      .hero .subtitle { font-size: 1.25rem; }
+      .benefits h2 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════ HERO + OFFER ════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="../logo-boat.png" alt="FishingPromoter" class="hero-logo">
+      <div class="badge">Fishing Show 2026 Exclusive</div>
+      <h1>Get a Full Year of<br><span class="cyan">FishingPromoter</span> for Just <span class="gold">$97</span></h1>
+      <p class="subtitle">Everything you need to grow your fishing business — community, marketing tools, training, and expert support — at an unbeatable show-only price.</p>
+
+      <div class="pricing-card">
+        <div class="old-price">Regular Price: $97/month</div>
+        <div class="new-price">$97 <span>/ year</span></div>
+        <div class="savings">You save over $1,000 — show special only</div>
+      </div>
+
+      <form class="offer-form" id="offer-form">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <select name="role" required>
+          <option value="" disabled selected>What best describes you?</option>
+          <option value="Guide / Charter">Guide / Charter</option>
+          <option value="Content Creator">Content Creator</option>
+          <option value="Lure Maker">Lure Maker</option>
+          <option value="Tackle Brand">Tackle Brand</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit" class="btn-gold">Claim My Spot</button>
+        <p class="form-note">Limited-time offer. Lock in this rate before it's gone.</p>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        <h3>You're In!</h3>
+        <p>We'll be in touch shortly with your exclusive offer details.</p>
+      </div>
+    </div>
+
+    <div class="wave-container">
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+    </div>
+  </section>
+
+  <!-- ════ WHAT YOU GET ════ -->
+  <section class="benefits">
+    <div class="benefits-inner fade-in">
+      <h2>What You Get With <span class="gold">FishingPromoter</span></h2>
+      <div class="benefits-grid">
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Private Community</h3>
+            <p>Connect with fellow fishing business owners, creators, and brands in an exclusive online community.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Marketing & Automation</h3>
+            <p>Powerful marketing and automation tools built specifically for the fishing industry.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Step-by-Step Training</h3>
+            <p>Comprehensive training programs to grow your fishing business, brand, or content channel.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Support & Coaching</h3>
+            <p>Expert coaching and support to help you scale and reach your goals faster.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Monetize Your Content</h3>
+            <p>YouTube and short-form video creators can find rewarding monetization deals.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h3>Industry Resources</h3>
+            <p>Curated resources for guides, content creators, lure makers, and tackle brands.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer>
+    <p class="tagline">GET SEEN. GET PAID. GO FISH.</p>
+    <p class="copyright">&copy; 2026 FishingPromoter.com. All rights reserved.</p>
+    <a href="../" class="back-link">← Back to FishingPromoter.com</a>
+  </footer>
+
+  <script>
+    /* ── Scroll fade-in ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    /* ── Webhook ── */
+    const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/iRM3EqXwu305VAkpSsKZ/webhook-trigger/255ded77-78f4-4092-80f5-823a1c9ef3a8';
+
+    document.getElementById('offer-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data = {
+        firstName: fd.get('firstName'),
+        email: fd.get('email'),
+        role: fd.get('role'),
+        source: 'fishing-show-2026',
+        offer: '$97/year'
+      };
+
+      // Send to GHL
+      try {
+        await fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      } catch (err) { console.error('GHL webhook error:', err); }
+
+      // Show success
+      document.getElementById('offer-form').style.display = 'none';
+      document.querySelector('.pricing-card').style.display = 'none';
+      document.getElementById('success-msg').classList.add('active');
+    });
+  </script>
+</body>
+</html>
